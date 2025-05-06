@@ -3,8 +3,8 @@ import { HiCurrencyRupee } from 'react-icons/hi';
 
 // Sample data based on the image
 const pricingData = [
-  { type: '1 BHK', area: 'On Request', price: '₹ 29.99 Lacs*' },
-  { type: '2 BHK', area: 'On Request', price: '₹ 41.99 Lacs*' },
+  { type: '1 BHK', area: 'On Request', price: '₹ 54.99 Lacs*' },
+  { type: '2 BHK', area: 'On Request', price: '₹ 79.99 Lacs*' },
 ];
 
 const PricingComponent = () => {
@@ -18,13 +18,13 @@ const PricingComponent = () => {
   };
 
   return (
-    <section id="price" className="pt-3 px-4 md:pr-4 bg-gray-50 w-full lg:w-[78%]">
+    <section id="price" className=" shadow-md mt-10 w-full lg:w-[77%]">
       <div className="bg-white p-6 md:p-10">
         <div className="flex flex-row relative justify-between items-center mb-6">
           <h2 className="text-3xl font-semibold text-gray-800">---&gt; ---&gt;</h2>
           
         </div>
-        <div className="hidden md:block text-orange-500 absolute right-[20%] text-4xl font-bold transform -rotate-270 mt-6"> Area & Price</div>
+        <div className="hidden md:block text-orange-500 absolute right-[20%] text-3xl font-bold transform -rotate-270 mt-6"> Area & Price</div>
 
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Table View */}

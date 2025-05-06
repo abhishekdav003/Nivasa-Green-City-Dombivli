@@ -35,7 +35,7 @@ function Hero() {
   };
 
   return (
-    <div className="relative w-full lg:w-[78%] overflow-hidden bg-white flex flex-col justify-start items-center">
+    <div id="home" className="relative w-full lg:w-[78%] shadow-md overflow-hidden bg-white flex flex-col justify-start items-center">
       {/* Banner image wrapper with relative position for overlay */}
       <div className="relative w-full">
         {/* Show ProjectCard only on large screens */}
