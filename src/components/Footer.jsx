@@ -20,7 +20,7 @@ const RealEstateLanding = () => {
           </div>
           
           {/* About Section */}
-          <h1 className="text-3xl font-bold mb-4">About Nivasa Group</h1>
+          <h1 className="text-3xl font-bold mb-4">About Nivasa Green</h1>
           
           <p className="text-md text-gray-800 mb-6">
             Established in 2012, Nivasa Group has emerged as a distinguished name in real estate and is renowned for its impeccable construction standards. Expanding our footprint, we are now setting new benchmarks with residential projects in Mumbai, offering the same unwavering commitment to quality and innovation.

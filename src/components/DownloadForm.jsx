@@ -1,7 +1,8 @@
+// DownloadForm.jsx
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-const DownloadForm = ({ handleClose }) => {
+const DownloadForm = ({ onClose }) => {  // Changed from handleClose to onClose to match PricingPage usage
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -54,14 +55,16 @@ const DownloadForm = ({ handleClose }) => {
       setTimeout(() => {
         // Trigger download of the brochure PDF
         const link = document.createElement("a");
-        link.href = "/brochure.pdf";
+        link.href = "/brohure.pdf";
         link.download = "brochure.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
-        // Close form after download
-        if (handleClose) handleClose();
+        // Close form after download - ensure onClose is called properly
+        if (onClose) {
+          onClose();
+        }
       }, 2000);
     } catch (error) {
       console.error("Form submission error:", error);
@@ -69,13 +72,13 @@ const DownloadForm = ({ handleClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-80 p-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-180 p-4">
       <div className="relative w-full max-w-md mx-auto bg-white rounded-lg shadow8xl overflow-hidden animate-fadeIn">
         {/* Header */}
         <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 sm:py-3 px-3 sm:px-4 flex justify-between items-center">
           <h2 className="text-lg sm:text-xl font-bold text-center flex-1">Download Brochure</h2>
           <button 
-            onClick={handleClose}
+            onClick={onClose} // Changed from handleClose to onClose
             className="text-white hover:text-gray-200 transition-colors duration-200"
             aria-label="Close"
           >
@@ -232,17 +235,4 @@ const DownloadForm = ({ handleClose }) => {
   );
 };
 
-export default function App() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const openForm = () => setIsOpen(true);
-  const closeForm = () => setIsOpen(false);
-
-  return (
-    <div>
-      
-      
-      {isOpen && <DownloadForm handleClose={closeForm} />}
-    </div>
-  );
-}
+export default DownloadForm;

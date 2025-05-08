@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-const RequestCallBack = ({ handleClose }) => {
+const RequestCallBack = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -40,7 +40,7 @@ const RequestCallBack = ({ handleClose }) => {
 
       setSubmitted(true);
       setTimeout(() => {
-        if (handleClose) handleClose();
+        if (onClose) onClose();
       }, 2000);
     } catch (error) {
       console.error("Form submission error:", error);
@@ -53,7 +53,7 @@ const RequestCallBack = ({ handleClose }) => {
         {/* Header */}
         <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-3 flex justify-between items-center">
           <h2 className="text-lg font-bold text-center flex-1">Request Call Back</h2>
-          <button onClick={handleClose} className="text-white hover:text-gray-200" aria-label="Close">
+          <button onClick={onClose} className="text-white hover:text-gray-200" aria-label="Close">
             <X size={20} />
           </button>
         </div>
@@ -133,7 +133,4 @@ const RequestCallBack = ({ handleClose }) => {
   );
 };
 
-export default function App() {
-  const [isOpen, setIsOpen] = useState(true);
-  return <div>{isOpen && <RequestCallBack handleClose={() => setIsOpen(false)} />}</div>;
-}
+export default RequestCallBack;
